@@ -23,13 +23,13 @@ public class GroupBotMessageTest {
     StringEntity param = new StringEntity("{" +
         "\"message\":" + "\"" + message + "\"" +
         "}");
-    URI uri = new URI("http://api.channel.io/docs/open/groups/@" + groupName + "/messages?botName=" + botName);
+    URI uri = new URI("https://api.channel.io/docs/open/groups/@" + groupName + "/messages?botName=" + botName);
     HttpClient httpClient = HttpClientBuilder.create().build();
     HttpPost httpPost = new HttpPost(String.valueOf(uri));
     httpPost.addHeader("X-Access-Key", accessKey);
     httpPost.addHeader("X-Access-Secret", accessSecret);
-    httpPost.setHeader("Accept", "application/json");
-    httpPost.setHeader("Content-type", "application/json");
+    httpPost.addHeader("Accept", "application/json");
+    httpPost.addHeader("Content-type", "application/json");
     httpPost.setEntity(param);
     HttpResponse response = httpClient.execute(httpPost);
 
