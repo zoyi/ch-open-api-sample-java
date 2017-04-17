@@ -1,5 +1,3 @@
-package helloOpenApi;
-
 import com.sun.org.apache.xml.internal.utils.URI;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -23,7 +21,10 @@ public class GroupBotMessageTest {
     StringEntity param = new StringEntity("{" +
         "\"message\":" + "\"" + message + "\"" +
         "}");
-    URI uri = new URI("https://api.channel.io/docs/open/groups/@" + groupName + "/messages?botName=" + botName);
+    URI uri = new URI("http://api.channel.io/open/groups/@" +
+        groupName +
+        "/messages?botName=" +
+        botName);
     HttpClient httpClient = HttpClientBuilder.create().build();
     HttpPost httpPost = new HttpPost(String.valueOf(uri));
     httpPost.addHeader("X-Access-Key", accessKey);

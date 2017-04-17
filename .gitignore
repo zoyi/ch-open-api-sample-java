@@ -6,6 +6,11 @@
 # Mac
 .DS_Store
 
-# Maven
-log/
-target/
+#Gradle
+.gradle/
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+gradlew
+gradlew.bat
