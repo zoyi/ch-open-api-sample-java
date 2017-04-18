@@ -20,7 +20,7 @@ public class GroupBotMessageTest {
 
     StringEntity param = new StringEntity("{" +
         "\"message\":" + "\"" + message + "\"" +
-        "}");
+        "}", "UTF-8");
     URI uri = new URI("http://api.channel.io/open/groups/@" +
         groupName +
         "/messages?botName=" +
